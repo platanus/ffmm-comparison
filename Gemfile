@@ -4,6 +4,7 @@ gem 'aws-sdk', '~> 3'
 gem 'bootsnap', require: false
 gem 'coffee-rails', '~> 4.2'
 gem 'enumerize'
+gem 'httparty'
 gem 'jbuilder', '~> 2.5'
 gem 'power-types'
 gem 'puma', '~> 3.11'
