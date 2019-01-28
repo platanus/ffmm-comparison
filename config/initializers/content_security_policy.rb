@@ -25,3 +25,14 @@
 # For further information see the following documentation:
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy-Report-Only
 # Rails.application.config.content_security_policy_report_only = true
+
+Rails.application.config.content_security_policy do |policy|
+  if Rails.env.development?
+    # You need to allow webpack-dev-server host as allowed origin for connect-src.
+    policy.connect_src :self, :https, 'http://localhost:3035', 'ws://localhost:3035'
+    # You need to enable unsafe-eval rule.
+    policy.script_src :self, :https, :unsafe_eval
+  else
+    policy.script_src :self, :https
+  end
+end
