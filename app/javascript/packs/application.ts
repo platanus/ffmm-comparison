@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     el,
     render: h => h(App)
   })
-
-  console.log(app)
 })
 
 
