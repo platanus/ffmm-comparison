@@ -1,0 +1,12 @@
+
+<h2><%= @asset_provider[:attributes][:name] %></h2>
+<h2><%= @fund[:attributes][:name].titleize %></h2>
+
+<% if @days.empty? %>
+  <p>No hay informacion para la serie elegida</p>
+  <% else %>
+  <h3>Detalles serie</h3>
+  <div id="series-graph"></div>
+  
+  <% end %>
+<%= javascript_pack_tag 'graphs' %>
