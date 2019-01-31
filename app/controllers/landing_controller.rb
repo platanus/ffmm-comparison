@@ -24,8 +24,9 @@ class LandingController < ApplicationController
     fund_id = params[:f_id]
     @asset_provider = fintual.asset_provider(asset_provider_id)
     @fund = fintual.fund(fund_id)
-    serie_id = params[:s_id]
-    @days = fintual.series_days(serie_id)
+    @series_id = params[:s_id]
+
+    #@days = fintual.series_days(serie_id)
   end
 
   private
