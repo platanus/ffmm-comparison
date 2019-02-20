@@ -1,1 +1,14 @@
-<h1>hello</h1>
+<h1>Que Fondo Mutuo</h1>
+
+<h3> Elige una administradora para ver sus fondos</h3>
+
+ <%= select_tag "asset_providers",
+      options_for_select(@asset_providers.collect { |ap| [ap[:short_name], ap[:id]] })
+ %> 
+
+ 
+<ul>
+  <% @asset_providers.each do |ap|%>
+    <li><%= link_to(ap[:short_name].titleize, asset_provider_path(ap[:id])) %></li>
+  <%end%>
+</ul>

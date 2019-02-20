@@ -1,0 +1,11 @@
+
+<h2><%= @asset_provider[:attributes][:name] %></h2>
+<h2><%= @fund[:attributes][:name].titleize %></h2>
+
+  <h3>Detalles serie</h3>
+  <%= content_tag :div, nil,
+     id: "series-graph",
+     data: { seriesid: @series_id }
+  %>
+
+<%= javascript_pack_tag 'goograph' %>

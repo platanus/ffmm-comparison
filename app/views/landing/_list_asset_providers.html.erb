@@ -1,0 +1,18 @@
+
+ <%if @asset_providers.present? %>
+  <p>Below is the list  </p>
+  <table width="100%">
+    <tr>
+      <td>ID</td>
+      <td>Nombre</td>
+    </tr>
+    <% @asset_providers.each do |u|%>
+    <tr>
+      <td><%=u[:id]%></td>
+      <td><%=u[:attributes][:name]%></td>
+    </tr>
+   <%end%>
+  </table>
+<%else%>
+  <p>No Bank is Found</p>
+<%end%>

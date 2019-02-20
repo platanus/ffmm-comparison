@@ -1,0 +1,12 @@
+<h2><%= @asset_provider[:attributes][:name] %></h2>
+
+<h3> Elige un fondo mutuo para ver más detalles</h3>
+
+<ul>
+  <% @funds.each do |f|%>
+    <li><%= link_to(f[:attributes][:name].titleize,
+            asset_provider_fund_path(ap_id: @asset_provider[:id], f_id: f[:id]))
+        %>
+    </li>
+  <%end%>
+</ul>

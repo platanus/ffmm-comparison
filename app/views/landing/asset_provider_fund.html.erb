@@ -1,0 +1,25 @@
+
+<h2><%= @asset_provider[:attributes][:name] %></h2>
+
+
+<% if @series.empty? %>
+  <p>No hay series para el fondo elegido</p>
+<% else %>
+  <h2><%= @fund_name.titleize %></h2>
+  <h3>Detalles comisiones</h3>
+  <ul>
+    <% @series.each do |s|%>
+      <li><b><%= link_to "Serie #{s[:serie]}",
+                    series_details_path(ap_id: @asset_provider[:id],
+                                        f_id: @fund_id,
+                                        s_id: s[:id]) %>
+          </b>
+      </li>
+      <ul>
+      <li>Fecha: <%= s[:date] %></li>
+      <li>Comisión fija: %<%= s[:fixed_fee] %></li>
+      <li>Comisión variable: %<%= s[:variable_fee] %></li>
+      </ul>
+    <%end%>
+  </ul>
+  <% end %>
